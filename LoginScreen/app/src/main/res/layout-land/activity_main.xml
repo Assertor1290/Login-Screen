@@ -50,14 +50,8 @@
 
                 <TextView
                     android:id="@+id/forgotPassword"
-                    style="@style/TextView"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="20dp"
+                    style="@style/ClickableTextView"
                     android:text="@string/forgot_password"
-                    android:textAlignment="textStart"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground"
                     />
 
                 <Button
