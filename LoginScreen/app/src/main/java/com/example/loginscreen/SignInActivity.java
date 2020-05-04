@@ -34,6 +34,8 @@ public class SignInActivity extends AppCompatActivity {
     CheckBox mCheckBox;
     Button mSignin;
     TextView mSignup;
+    ImageButton googleSignIn,phoneSignIn;
+
     //1. Declare an Instance of Firebase Auth
     private FirebaseAuth mAuthIn;
 
@@ -42,11 +44,10 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         //Get Current user
         FirebaseUser currentUser = mAuthIn.getCurrentUser();
 
-        //If user is not null, means already signed in then,
+        //If user is not null, means already signed in then take to Main Activity
         if (currentUser != null) {
             Intent i = new Intent(SignInActivity.this, MainActivity.class);
             startActivity(i);
@@ -60,13 +61,14 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mToolbar = findViewById(R.id.toolbar);
-
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);
         mCheckBox = findViewById(R.id.checkbox);
         mSignin = findViewById(R.id.signin);
         mSignup = findViewById(R.id.signup);
-        mForgotPassword=findViewById(R.id.forgotPassword);
+        mForgotPassword = findViewById(R.id.forgotPassword);
+        googleSignIn=findViewById(R.id.google_Sign_In);
+        phoneSignIn=findViewById(R.id.phone_Sign_In);
 
         //2. Initialize Firebase auth instance
         mAuthIn = FirebaseAuth.getInstance();
@@ -115,10 +117,12 @@ public class SignInActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
             }
         });
+
+        //To get a reset password mail
         mForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final EditText resetMail=new EditText(v.getContext());
+                final EditText resetMail = new EditText(v.getContext());
                 new AlertDialog.Builder(v.getContext())
                         .setTitle("Reset Password")
                         .setMessage("Enter you email to receive reset link")
@@ -126,26 +130,27 @@ public class SignInActivity extends AppCompatActivity {
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                String mail=resetMail.getText().toString().trim();
+                                String mail = resetMail.getText().toString().trim();
                                 mAuthIn.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
-                                        Toast.makeText(SignInActivity.this,"Reset Link Sent to Your Email",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(SignInActivity.this, "Reset Link Sent to Your Email", Toast.LENGTH_SHORT).show();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(SignInActivity.this,"Error! Reset Link not sent "+e.getMessage(),Toast.LENGTH_LONG).show();
+                                        Toast.makeText(SignInActivity.this, "Error! Reset Link not sent " + e.getMessage(), Toast.LENGTH_LONG).show();
                                     }
                                 });
                             }
                         })
-                        .setNegativeButton(android.R.string.no,null)
+                        .setNegativeButton(android.R.string.no, null)
                         .show();
             }
         });
     }
 
+    //Used when logout was clicked and it returned here
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(Intent.ACTION_MAIN);

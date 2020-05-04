@@ -109,8 +109,6 @@ public class SignUpActivity extends AppCompatActivity {
                 Intent i = new Intent(SignUpActivity.this,SignInActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
-                //this one is for when user clicks sign in button to go to
-                //SignInActivity
                 overridePendingTransition(0,0);
             }
         });
