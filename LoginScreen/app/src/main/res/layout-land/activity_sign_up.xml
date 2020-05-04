@@ -30,7 +30,7 @@
 
             <LinearLayout
                 style="@style/NestedLinearLayout"
-                android:layout_height="380dp">
+                android:layout_height="420dp">
 
                 <EditText
                     android:id="@+id/name"
@@ -41,11 +41,19 @@
                     android:inputType="textPersonName" />
 
                 <EditText
+                    android:id="@+id/phone"
+                    style="@style/EditText"
+                    android:autofillHints="@string/phone"
+                    android:drawableStart="@drawable/ic_phone_black_24dp"
+                    android:hint="@string/phone"
+                    android:inputType="phone" />
+
+                <EditText
                     android:id="@+id/email"
                     style="@style/EditText"
-                    android:autofillHints="@string/email_mobile"
+                    android:autofillHints="@string/email"
                     android:drawableStart="@drawable/ic_email_black_24dp"
-                    android:hint="@string/email_mobile"
+                    android:hint="@string/email"
                     android:inputType="textEmailAddress|phone" />
 
                 <EditText
@@ -56,34 +64,28 @@
                     android:hint="@string/password"
                     android:inputType="textPassword" />
 
-                <CheckBox
-                    android:id="@+id/checkbox"
-                    style="@style/CheckBox"
-                    android:text="@string/agree_to_our_terms_amp_conditions" />
-
-                <ImageButton
-                    android:id="@+id/signup"
-                    style="@style/ImageButton"
-                    android:background="@drawable/button_background"
-                    android:contentDescription="@string/sign_up"
-                    android:src="@drawable/ic_arrow_forward_black_24dp" />
             </LinearLayout>
 
             <LinearLayout
                 style="@style/NestedLinearLayout"
                 android:layout_marginTop="200dp">
 
-                <TextView
-                    style="@style/TextView"
-                    android:layout_marginTop="30dp"
-                    android:text="@string/already_have_an_account"
-                    android:textColor="@android:color/black" />
-
                 <Button
-                    android:id="@+id/signin"
+                    android:id="@+id/signup"
+                    android:layout_marginTop="80dp"
                     style="@style/Button"
                     android:background="@drawable/button_background"
-                    android:text="@string/sign_in" />
+                    android:text="@string/sign_up" />
+
+                <TextView
+                    android:id="@+id/signin"
+                    style="@style/TextView"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/already_have_an_account"
+                    android:textColor="@android:color/black"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:background="?attr/selectableItemBackground"/>
             </LinearLayout>
         </LinearLayout>
 

@@ -33,12 +33,12 @@
                 android:layout_height="380dp">
 
                 <EditText
-                    android:id="@+id/emailPhone"
+                    android:id="@+id/email"
                     style="@style/EditText"
-                    android:autofillHints="@string/email_mobile"
+                    android:autofillHints="@string/email"
                     android:drawableStart="@drawable/ic_email_black_24dp"
-                    android:hint="@string/email_mobile"
-                    android:inputType="textEmailAddress|phone" />
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress" />
 
                 <EditText
                     android:id="@+id/password"
@@ -48,17 +48,34 @@
                     android:hint="@string/password"
                     android:inputType="textPassword" />
 
-                <CheckBox
-                    android:id="@+id/checkbox"
-                    style="@style/CheckBox"
-                    android:text="@string/remember_me" />
+                <TextView
+                    android:id="@+id/forgotPassword"
+                    style="@style/TextView"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/forgot_password"
+                    android:textAlignment="textStart"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    />
 
-                <ImageButton
+                <Button
                     android:id="@+id/signin"
-                    style="@style/ImageButton"
+                    style="@style/Button"
+                    android:layout_marginTop="40dp"
                     android:background="@drawable/button_background"
-                    android:contentDescription="@string/login"
-                    android:src="@drawable/ic_arrow_forward_black_24dp" />
+                    android:text="@string/sign_in" />
+
+                <TextView
+                    android:id="@+id/signup"
+                    style="@style/TextView"
+                    android:text="@string/don_t_have_an_account"
+                    android:textColor="@android:color/black"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_marginTop="5dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
 
             </LinearLayout>
 
@@ -69,14 +86,31 @@
                 <TextView
                     style="@style/TextView"
                     android:layout_marginTop="30dp"
-                    android:text="@string/don_t_have_an_account"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/or_connect_with"
                     android:textColor="@android:color/black" />
 
-                <Button
-                    android:id="@+id/signup"
-                    style="@style/Button"
-                    android:background="@drawable/button_background"
-                    android:text="@string/sign_up" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/google_Sign_In"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/google_button_background"
+                        android:contentDescription="@string/google_sign_in" />
+
+                    <ImageButton
+                        android:id="@+id/phone_Sign_In"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/phone_button_background"
+                        android:contentDescription="@string/phone_sign_in" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
