@@ -72,20 +72,17 @@
 
                 <Button
                     android:id="@+id/signup"
-                    android:layout_marginTop="80dp"
                     style="@style/Button"
+                    android:layout_marginTop="80dp"
                     android:background="@drawable/button_background"
                     android:text="@string/sign_up" />
 
                 <TextView
                     android:id="@+id/signin"
-                    style="@style/TextView"
+                    style="@style/ClickableTextView"
                     android:layout_marginTop="5dp"
                     android:text="@string/already_have_an_account"
-                    android:textColor="@android:color/black"
-                    android:focusable="true"
-                    android:clickable="true"
-                    android:background="?attr/selectableItemBackground"/>
+                    android:textAlignment="center" />
             </LinearLayout>
         </LinearLayout>
 
