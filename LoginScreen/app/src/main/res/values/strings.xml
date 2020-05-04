@@ -2,19 +2,19 @@
     <string name="app_name">LoginScreen</string>
 
     <string name="login">LOGIN</string>
-    <string name="sign_in">SIGN IN</string>
     <string name="email"><b>EMAIL</b></string>
     <string name="password"><b>PASSWORD</b></string>
-    <string name="don_t_have_an_account"><u>Don\'t have an Account ?</u></string>
-    <string name="remember_me">REMEMBER ME</string>
-
-    <string name="sign_up">SIGN UP</string>
-    <string name="name"><b>NAME</b></string>
-    <string name="already_have_an_account"><u>Already have an Account?</u></string>
-    <string name="logout">Logout</string>
-    <string name="phone"><b>PHONE</b></string>
     <string name="forgot_password"><u>Forgot Password ?</u></string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="don_t_have_an_account"><u>Don\'t have an Account ?</u></string>
     <string name="or_connect_with">----Or Connect With----</string>
     <string name="google_sign_in">Google Sign In</string>
     <string name="phone_sign_in">Phone Sign In</string>
+
+    <string name="name"><b>NAME</b></string>
+    <string name="phone"><b>PHONE</b></string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="already_have_an_account"><u>Already have an Account?</u></string>
+
+    <string name="logout">Logout</string>
 </resources>
