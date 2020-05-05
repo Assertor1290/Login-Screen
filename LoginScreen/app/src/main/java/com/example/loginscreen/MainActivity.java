@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mAuth.signOut();
                 startActivity(new Intent(MainActivity.this, SignInActivity.class));
-                overridePendingTransition(0,0);
                 finish();
             }
         });

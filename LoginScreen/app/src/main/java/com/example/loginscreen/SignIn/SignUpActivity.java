@@ -92,10 +92,9 @@ public class SignUpActivity extends AppCompatActivity {
                             Toast.makeText(SignUpActivity.this,"Successfully created",Toast.LENGTH_SHORT).show();
                             Intent i = new Intent(SignUpActivity.this, MainActivity.class);
                             startActivity(i);
-                            overridePendingTransition(0,0);
                         }
                         else{
-                            Toast.makeText(SignUpActivity.this,"Registration Failed",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this,"Registration Failed"+task.getException(),Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -110,16 +109,8 @@ public class SignUpActivity extends AppCompatActivity {
                 Intent i = new Intent(SignUpActivity.this, SignInActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
-                overridePendingTransition(0,0);
             }
         });
     }
-
-    @Override
-    public void finish() {
-        super.finish();
-        //this one is called when user presses back button. On pressing back button, finish()
-        //is called
-        overridePendingTransition(0,0);
-    }
+    
 }
