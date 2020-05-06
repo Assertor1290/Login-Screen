@@ -17,4 +17,6 @@
     <string name="already_have_an_account"><u>Already have an Account?</u></string>
 
     <string name="logout">Logout</string>
+    <string name="submit">Submit</string>
+    <string name="next">Next</string>
 </resources>

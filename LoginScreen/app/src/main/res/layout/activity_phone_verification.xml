@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/phone_back_image"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".signin.PhoneSignIn">
+    tools:context=".signin.PhoneVerification">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="May I ask your phone number?"
+        android:text="Wait for the code I sent You"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-        android:textColor="@android:color/black" />
+        android:textColor="@color/colorPrimary" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/editTextMobile"
-        android:layout_width="match_parent"
+        android:id="@+id/editTextCode"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:digits="0123456789"
-        android:textColor="@android:color/white"
-        android:drawableStart="@drawable/ic_phone_black_24dp"
         android:drawablePadding="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:hint="Enter your mobile number"
+        android:hint="enter verification code"
         android:inputType="phone"
         android:maxLength="10" />
 
     <Button
-        android:id="@+id/buttonContinue"
+        android:id="@+id/buttonSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:background="@drawable/button_background"
-        android:text="Submit"
+        android:background="@color/colorPrimaryDark"
+        android:text="Sign In"
         android:textAllCaps="false"
         android:textColor="#cdd8f1" />
 
