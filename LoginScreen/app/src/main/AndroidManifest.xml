@@ -24,7 +24,8 @@
 
         <activity android:name=".MainActivity" />
         <activity android:name=".signin.PhoneSignIn" />
-        <activity android:name=".signin.SignUpActivity" />
+        <activity android:name=".signin.SignUpActivity"
+            android:windowSoftInputMode="adjustPan"/>
 
     </application>
 
