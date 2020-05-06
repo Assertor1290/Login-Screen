@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="May I ask your phone number?"
+        android:text="@string/may_i_ask_your_phone_number"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
         android:textColor="@android:color/black" />
 
@@ -22,7 +22,6 @@
         android:id="@+id/editTextMobile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView"
         android:layout_marginTop="20dp"
         android:digits="0123456789"
         android:textColor="@android:color/white"
@@ -30,7 +29,7 @@
         android:drawablePadding="10dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:hint="Enter your mobile number"
+        android:hint="@string/enter_your_mobile_number"
         android:inputType="phone"
         android:maxLength="10" />
 
@@ -40,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:background="@drawable/button_background"
-        android:text="Submit"
+        android:text="@string/submit"
         android:textAllCaps="false"
         android:textColor="#cdd8f1" />
 

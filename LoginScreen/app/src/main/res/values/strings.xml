@@ -19,4 +19,10 @@
     <string name="logout">Logout</string>
     <string name="submit">Submit</string>
     <string name="next">Next</string>
+    <string name="wait_for_the_code_i_sent_you">Wait for the code I sent You...</string>
+    <string name="i_sent_you_a_code_it_will_be_detected_automatically_but_if_it_is_not_detected_you_can_put_it_below_manually_as_well">I sent you a code, it will be detected automatically, but if it is not detected, you can put it below manually as well</string>
+    <string name="enter_verification_code">Enter verification code</string>
+    <string name="may_i_ask_your_phone_number">May I ask your phone number?</string>
+    <string name="enter_your_mobile_number">Enter your mobile number</string>
+    <string name="submit">Submit</string>
 </resources>
