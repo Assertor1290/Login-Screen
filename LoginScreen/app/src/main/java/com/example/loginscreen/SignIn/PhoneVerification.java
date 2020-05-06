@@ -93,7 +93,7 @@ public class PhoneVerification extends AppCompatActivity {
     private void sendVerificationCode(String number){
         mProgressBar.setVisibility(View.VISIBLE);
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                number,
+                "+91"+number,
                 60,
                 TimeUnit.SECONDS,
                 this,
