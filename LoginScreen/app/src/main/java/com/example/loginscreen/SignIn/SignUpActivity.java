@@ -18,13 +18,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class SignUpActivity extends AppCompatActivity {
 
     Toolbar mToolbar;
-    EditText mEmail,mPassword,mName,mPhone;
+    EditText mEmail, mPassword, mName, mPhone;
     CheckBox mCheckBox;
     Button mSignup;
     TextView mSignin;
@@ -41,60 +41,54 @@ public class SignUpActivity extends AppCompatActivity {
         mEmail = findViewById(R.id.email);
         mPassword = findViewById(R.id.password);
         mName = findViewById(R.id.name);
-        mPhone=findViewById(R.id.phone);
-        mCheckBox =findViewById(R.id.checkbox);
-        mSignup =findViewById(R.id.signup);
-        mSignin =findViewById(R.id.signin);
+        mPhone = findViewById(R.id.phone);
+        mCheckBox = findViewById(R.id.checkbox);
+        mSignup = findViewById(R.id.signup);
+        mSignin = findViewById(R.id.signin);
 
-        mAuth=FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
-        mSignup.setOnClickListener(new View.OnClickListener(){
+        mSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email=mEmail.getText().toString().trim();
-                String password=mPassword.getText().toString().trim();
-                String name=mName.getText().toString().trim();
-                String phone=mPhone.getText().toString().trim();
-                if(TextUtils.isEmpty(name))
-                {
+                String email = mEmail.getText().toString().trim();
+                String password = mPassword.getText().toString().trim();
+                String name = mName.getText().toString().trim();
+                String phone = mPhone.getText().toString().trim();
+                if (TextUtils.isEmpty(name)) {
                     mName.setError("Name is required");
                     mName.requestFocus();
                     return;
                 }
-                if(TextUtils.isEmpty(phone))
-                {
+                if (TextUtils.isEmpty(phone)) {
                     mPhone.setError("Phone is required");
                     mPhone.requestFocus();
                     return;
                 }
-                if(TextUtils.isEmpty(email))
-                {
+                if (TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is required");
                     mEmail.requestFocus();
                     return;
                 }
-                if(TextUtils.isEmpty(password))
-                {
+                if (TextUtils.isEmpty(password)) {
                     mPassword.setError("Password required");
                     mPassword.requestFocus();
                     return;
                 }
-                if(password.length()<6)
-                {
+                if (password.length() < 6) {
                     mPassword.setError("Password must be >=6 characters");
                     mPassword.requestFocus();
                     return;
                 }
-                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(SignUpActivity.this,"Successfully created",Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(SignUpActivity.this, "Successfully created", Toast.LENGTH_SHORT).show();
                             Intent i = new Intent(SignUpActivity.this, MainActivity.class);
                             startActivity(i);
-                        }
-                        else{
-                            Toast.makeText(SignUpActivity.this,"Registration Failed"+task.getException(),Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(SignUpActivity.this, "Registration Failed" + task.getException(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -103,7 +97,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
         //take to sign in screen
-        mSignin.setOnClickListener(new View.OnClickListener(){
+        mSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(SignUpActivity.this, SignInActivity.class);
