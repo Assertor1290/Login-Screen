@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:drawable="@drawable/addgoogle"
+        android:drawable="@drawable/google_icon_image"
         android:bottom="5dp"
         android:left="5dp"
         android:right="5dp"
